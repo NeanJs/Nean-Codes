@@ -69,6 +69,12 @@ const Dashboard = () => {
 
     // fetchData();
   }, []);
+  const handleDelete = async (id) => {
+    const collectionRef = collection(db, currentPage.toLowerCase());
+    const docRef = doc(collectionRef, id);
+    await deleteDoc(docRef);
+    // fetchData();
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -405,7 +411,10 @@ const Dashboard = () => {
       <main className="w-3/4 p-4">
         <header className="flex justify-between items-center mb-4">
           <h1 className="text-xl font-bold">Portfolio CMS</h1>
-          <Button onClick={() => signOut(auth)} className="bg-red-500 text-white">
+          <Button
+            onClick={() => signOut(auth)}
+            className="bg-red-500 text-white"
+          >
             Logout
           </Button>
         </header>
