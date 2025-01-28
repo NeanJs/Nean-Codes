@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Link } from "react-scroll";
-import { Button } from "@/components/global/button";
+import { Button } from "../components/global/button";
 import { useEffect, useState } from "react";
 
 export const Navbar = () => {

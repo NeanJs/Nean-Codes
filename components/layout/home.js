@@ -1,7 +1,7 @@
 import { Button } from "../global/button";
 import { HiArrowLongDown as ArrowDownwards } from "react-icons/hi2";
-import ContentWrapper from "@/components/global/ContentWrapper";
-import BodyWrapper from "@/components/global/BodyWrapper";
+import ContentWrapper from "../components/global/ContentWrapper";
+import BodyWrapper from "../components/global/BodyWrapper";
 import { Link } from "react-scroll";
 import { TfiCommentAlt } from "react-icons/tfi";
 

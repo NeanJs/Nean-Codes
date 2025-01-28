@@ -3,7 +3,7 @@ import bg1 from "@/public/assets/about/addons/2.svg";
 import bg3 from "@/public/assets/about/addons/3.svg";
 import bg4 from "@/public/assets/about/addons/4.svg";
 import Image from "next/image";
-import BodyWrapper from "@/components/global/BodyWrapper";
+import BodyWrapper from "../components/global/BodyWrapper";
 
 import ContentWrapper from "../global/ContentWrapper";
 export default function About() {
