@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 
 export const Card = ({ children, className }) => {
@@ -11,3 +12,4 @@ export const Card = ({ children, className }) => {
 export const CardContent = ({ children }) => {
   return <div className="text-gray-800">{children}</div>;
 };
+
