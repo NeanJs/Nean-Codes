@@ -1,16 +1,19 @@
 import { Poppins } from "next/font/google";
-import Home from "@/components/layout/home";
-import About from "@/components/layout/about";
-import { Navbar } from "@/components/global/navbar";
-import Services from "@/components/layout/services";
-import Portfolio from "@/components/layout/portfolio";
-import Footer from "@/components/global/footer";
-import Loader from "@/components/global/loader";
+
 import { useEffect, useState } from "react";
+
 import Aos from "aos";
 import "aos/dist/aos.css";
-import Contact from "@/components/layout/contact";
-import { Startups } from "@/components/layout/startups";
+import Loader from "../components/global/loader";
+import { Navbar } from "../components/global/navbar";
+import Home from "../components/ui/home";
+import About from "../components/ui/about";
+import Services from "../components/ui/services";
+import Portfolio from "../components/ui/portfolio";
+import { Startups } from "../components/ui/startups";
+import { Contact } from "lucide-react";
+import Footer from "../components/global/footer";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],

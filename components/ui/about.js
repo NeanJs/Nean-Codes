@@ -1,11 +1,11 @@
-import bg2 from "@/public/assets/about/addons/1.svg";
-import bg1 from "@/public/assets/about/addons/2.svg";
-import bg3 from "@/public/assets/about/addons/3.svg";
-import bg4 from "@/public/assets/about/addons/4.svg";
+import bg2 from "../../public/assets/about/addons/1.svg";
+import bg1 from "../../public/assets/about/addons/2.svg";
+import bg3 from "../../public/assets/about/addons/3.svg";
+import bg4 from "../../public/assets/about/addons/4.svg";
 import Image from "next/image";
-import BodyWrapper from "@/components/global/BodyWrapper";
+import BodyWrapper from "../../components/global/BodyWrapper";
 
-import ContentWrapper from "@/components/global/ContentWrapper";
+import ContentWrapper from "../../components/global/ContentWrapper";
 export default function About() {
   const journeytabs = [
     {
