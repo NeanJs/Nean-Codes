@@ -17,7 +17,7 @@ const poppins = Poppins({
 });
 
 export default function HomePage() {
-  const [loader, setLoader] = useState(false);
+  const [loader, setLoader] = useState(true);
   useEffect(() => {
     setTimeout(() => setLoader(false), 4000);
   }, []);
