@@ -10,6 +10,7 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import { signOut } from "firebase/auth";
+// change the import statement to the following:
 import { Card, CardContent } from "../../components/admin/card";
 import { Button } from "../../components/admin/button";
 
