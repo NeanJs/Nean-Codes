@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import ContentWrapper from "./global/ContentWrapper";
+import ContentWrapper from "./ContentWrapper";
 import { FaArrowUp, FaXTwitter } from "react-icons/fa6";
 import {
   FaDiscord,
@@ -9,7 +9,7 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 import { Button } from "./button";
-import BodyWrapper from "./global/BodyWrapper";
+import BodyWrapper from "./BodyWrapper";
 function Footer() {
   const Links = [
     {
@@ -56,8 +56,9 @@ function Footer() {
                 handles.
               </p>
               <div className="social-links flex gap-2 items-center text-2xl ">
-                {Links.map((link) => (
+                {Links.map((link, index) => (
                   <Link
+                    key={index}
                     className="hover:rotate-12 ease-linear duration-300 w-10 h-10 bg-black grid place-items-center text-white rounded-full"
                     href={link.url}
                   >

@@ -105,3 +105,18 @@ textarea {
 .featured-works {
   pointer-events: none;
 }
+
+.admin-panel input {
+  @apply border-b-2  bg-transparent p-2 mb-4 block w-full;
+}
+
+.admin-panel label {
+  @apply block mb-2 text-nean_dark60;
+}
+
+.admin-panel textarea {
+  @apply bg-white p-2 mb-4 block w-full border-b-2;
+}
+.admin-panel button {
+  @apply bg-nean_blue text-white p-2 rounded-md;
+}

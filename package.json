@@ -10,11 +10,12 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@reduxjs/toolkit": "^2.5.0",
     "aos": "^2.3.4",
     "autoprefixer": "10.4.15",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "firebase": "^10.13.2",
+    "firebase": "^10.14.1",
     "firebase-tools": "^13.19.0",
     "lucide-react": "^0.427.0",
     "next": "13.4.19",
@@ -28,5 +29,9 @@
     "tailwind-merge": "^2.4.0",
     "tailwindcss": "^3.3.3",
     "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.8",
+    "typescript": "5.7.3"
   }
 }

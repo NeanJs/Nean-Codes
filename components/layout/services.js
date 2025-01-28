@@ -1,8 +1,8 @@
-import Fullstack from "../public/assets/services/fullstack.png";
-import UIUX from "../public/assets/services/uiux.png";
-import Native from "../public/assets/services/native.png";
-import BodyWrapper from "./global/BodyWrapper";
-import ContentWrapper from "./global/ContentWrapper";
+import Fullstack from "@/public/assets/services/fullstack.png";
+import UIUX from "@/public/assets/services/uiux.png";
+import Native from "@/public/assets/services/native.png";
+import BodyWrapper from "../global/BodyWrapper";
+import ContentWrapper from "../global/ContentWrapper";
 import Image from "next/image";
 const SERVICES = [
   {
@@ -48,7 +48,10 @@ export default function Services() {
           </div>
           <div className="w-full flex lg:flex-row flex-col justify-between items-center gap-8 relative">
             {SERVICES.map((service, key) => (
-              <div className="service-item flex flex-col items-center justify-center h-[400px] max-w-full w-[460px] bg-nean_blue">
+              <div
+                className="service-item flex flex-col items-center justify-center h-[400px] max-w-full w-[460px] bg-nean_blue"
+                key={key}
+              >
                 <div className="flex items-start flex-col justify-center gap-2 w-[90%]">
                   <span className="w-[100px] h-[100px] bg-nean_creamF7 grid place-items-center rounded-full item-head">
                     <Image src={service.icon} width={60} height={60} />

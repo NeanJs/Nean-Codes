@@ -5,7 +5,7 @@ import bg4 from "@/public/assets/about/addons/4.svg";
 import Image from "next/image";
 import BodyWrapper from "@/components/global/BodyWrapper";
 
-import ContentWrapper from "./global/ContentWrapper";
+import ContentWrapper from "../global/ContentWrapper";
 export default function About() {
   const journeytabs = [
     {

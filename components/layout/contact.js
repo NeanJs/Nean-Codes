@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
-import BodyWrapper from "./global/BodyWrapper";
-import ContentWrapper from "./global/ContentWrapper";
-import { Button } from "./button";
+import BodyWrapper from "../global/BodyWrapper";
+import ContentWrapper from "../global/ContentWrapper";
+import { Button } from "../global/button";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 

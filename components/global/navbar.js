@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Link } from "react-scroll";
-import { Button } from "./button";
+import { Button } from "@/components/global/button";
 import { useEffect, useState } from "react";
 
 export const Navbar = () => {
@@ -22,6 +22,10 @@ export const Navbar = () => {
       title: "Portfolio",
       path: "portfolio",
     },
+    {
+      title: "Startups",
+      path: "startups",
+    },
   ];
   const [floatNav, setFloatNav] = useState(false);
   useEffect(() => {
@@ -32,7 +36,7 @@ export const Navbar = () => {
         setFloatNav(false);
       }
     };
-  }, [window.scrollY]);
+  }, []);
   const handleMobileToggle = () => {
     const burger = document.querySelector(".mobile");
     burger.classList.toggle("pop");

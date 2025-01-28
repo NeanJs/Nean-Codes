@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import BodyWrapper from "./global/BodyWrapper";
-import ContentWrapper from "./global/ContentWrapper";
-import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
+import BodyWrapper from "../global/BodyWrapper";
+import ContentWrapper from "../global/ContentWrapper";
+import { BsArrowRight, BsArrowLe, BsArrowLeft } from "react-icons/bs";
+import { IoOpenOutline } from "react-icons/io5";
+
 import Aos from "aos";
-import { Button } from "./button";
+import { Button } from "../global/button";
 import {
   MdOutlineViewCarousel as Carousel,
   MdOutlineGridView as Grid,
@@ -11,7 +13,14 @@ import {
 
 function Portfolio() {
   const [slideID, setSlideID] = useState(0);
-
+  const [count, setCount] = useState(4);
+  const handleShowMore = () => {
+    if (count >= gallery?.length) {
+      setCount(3);
+    } else {
+      setCount((prevCount) => prevCount + 2);
+    }
+  };
   const projects = [
     {
       id: 1,
@@ -46,6 +55,7 @@ function Portfolio() {
   const handleSlide = (type) => {
     const project = document.querySelector(".project");
     const works = document.querySelector(".featured-works");
+
     let newSlideID;
 
     if (slideID <= 0 && type == "prev") {
@@ -62,7 +72,7 @@ function Portfolio() {
       left: newSlideID * project.clientWidth,
     });
   };
-  const [view, setView] = useState("carousel");
+  const [view, setView] = useState("grid");
   const handleChangeView = (mode) => {
     setView(mode);
   };
@@ -98,31 +108,29 @@ function Portfolio() {
           </div>
           <>
             {view == "grid" ? (
-              <div
-                className={` grid-view projects w-full grid grid-cols-1 md:grid-cols-2 gap-2`}
-              >
-                {projects.map((project, id) => {
-                  return (
+              <div className="columns-1 md:columns-2 gap-4 relative">
+                {projects?.length > 0 &&
+                  projects.slice(0, count).map((item) => (
                     <div
-                      key={id}
-                      className="project overflow-hidden group flex flex-col gap-3 items-start relative"
+                      data-aos="zoom-in"
+                      data-aos-delay={item * 200}
+                      key={item?.id}
+                      className="mb-4 group relative overflow-hidden rounded-lg "
+                      onClick={() => handleModal(item)}
                     >
                       <img
-                        data-aos="fade-up"
-                        src={project.thumbnail}
-                        alt=""
-                        data-aos-delay={id * 200}
-                        className="project-img w-full h-[350px]  object-cover group-hover:translate-y-0"
+                        src={item?.thumbnail}
+                        className="group-hover:scale-125 ease-linear duration-200"
+                        alt={item?.title}
                       />
-                      <div className="flex ease-in duration-300 flex-col gap-4 w-full h-full absolute translate-y-[100%] group-hover:translate-y-0 bg-nean_creamF7 bg-opacity-40 backdrop-blur-lg p-3">
-                        <div className="project-head flex flex-col gap-2 ">
-                          <span className="text-nean_base md:text-nean_md">
-                            {project?.title}
-                          </span>
-                          <span className="text-xs">{project?.type}</span>
-                        </div>
+                      <div className="absolute  inset-0 bg-black bg-opacity-50 flex flex-col  items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <IoOpenOutline className="text-white text-3xl" />
+                        <span className="text-white text-lg">{item.title}</span>
+                        <span className="type text-black bg-white size-fit px-2 py-1 rounded-md">
+                          {item?.type}
+                        </span>
                         <div className="prj-tags my-2 flex gap-1 text-xs">
-                          {project?.tags.map((tag, key) => (
+                          {item?.tags.map((tag, key) => (
                             <span
                               key={key}
                               className="bg-nean_creamF2 text-black rounded px-2 py-1"
@@ -131,18 +139,9 @@ function Portfolio() {
                             </span>
                           ))}
                         </div>
-                        <p className="text-sm text-nean_dark60 leading-relaxed md:leading-nean_base">
-                          Lorem ipsum dolor, sit amet consectetur adipisicing
-                          elit. Alias blanditiis beatae amet cumque sequi
-                          dolorum quod, explicabo odit officia. Numquam delectus
-                          debitis amet explicabo rem? Blanditiis nisi dolor rem
-                          reiciendis consectetur illo, excepturi inventore,
-                          fugit magni doloribus laudantium consequatur non.
-                        </p>
                       </div>
                     </div>
-                  );
-                })}
+                  ))}
               </div>
             ) : (
               <>
@@ -268,3 +267,50 @@ function Portfolio() {
 }
 
 export default Portfolio;
+const GridView = () => (
+  <div
+    className={` grid-view projects w-full grid grid-cols-1 md:grid-cols-2 gap-2`}
+  >
+    {projects.map((project, id) => {
+      return (
+        <div
+          key={id}
+          className="project overflow-hidden group flex flex-col gap-3 items-start relative"
+        >
+          <img
+            data-aos="fade-up"
+            src={project.thumbnail}
+            alt=""
+            data-aos-delay={id * 200}
+            className="project-img w-full h-[350px]  object-cover group-hover:translate-y-0"
+          />
+          <div className="flex ease-in duration-300 flex-col gap-4 w-full h-full absolute translate-y-[100%] group-hover:translate-y-0 bg-nean_creamF7 bg-opacity-40 backdrop-blur-lg p-3">
+            <div className="project-head flex flex-col gap-2 ">
+              <span className="text-nean_base md:text-nean_md">
+                {project?.title}
+              </span>
+              <span className="text-xs">{project?.type}</span>
+            </div>
+            <div className="prj-tags my-2 flex gap-1 text-xs">
+              {project?.tags.map((tag, key) => (
+                <span
+                  key={key}
+                  className="bg-nean_creamF2 text-black rounded px-2 py-1"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <p className="text-sm text-nean_dark60 leading-relaxed md:leading-nean_base">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias
+              blanditiis beatae amet cumque sequi dolorum quod, explicabo odit
+              officia. Numquam delectus debitis amet explicabo rem? Blanditiis
+              nisi dolor rem reiciendis consectetur illo, excepturi inventore,
+              fugit magni doloribus laudantium consequatur non.
+            </p>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+);
