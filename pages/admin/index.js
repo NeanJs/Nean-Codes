@@ -10,8 +10,8 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import { signOut } from "firebase/auth";
-import { Card, CardContent } from "./ui/components/card";
-import { Button } from "./ui/components/button";
+import { Card, CardContent } from "../../components/admin/card";
+import { Button } from "../../components/admin/button";
 
 const Dashboard = () => {
   const [currentPage, setCurrentPage] = useState("Projects");

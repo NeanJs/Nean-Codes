@@ -1,7 +1,11 @@
-"use client"
 import React from "react";
 
-export const Button = ({ children, onClick, type = "button", className }) => {
+export default function Button({
+  children,
+  onClick,
+  type = "button",
+  className,
+}) {
   return (
     <button
       type={type}
@@ -11,4 +15,4 @@ export const Button = ({ children, onClick, type = "button", className }) => {
       {children}
     </button>
   );
-};
+}
